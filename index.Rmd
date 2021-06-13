@@ -12,4 +12,4 @@ This is Pete.
 
 They are brothers!
 
-<img src="files/brother_kitties.jpg" style="width:50%">
+<img src="files/Husna.jpeg" style="width:50%">
