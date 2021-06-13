@@ -4,12 +4,4 @@ title: "Husna Anwar - Personal Website"
 
 This is Husna.
 
-<img src="files/john.jpg" style="width:50%">
-
-This is Pete.
-
-<img src="files/pete.jpg" style="width:50%">
-
-They are brothers!
-
 <img src="files/Husna.jpeg" style="width:50%">
