@@ -1,0 +1,23 @@
+name: "husna-anwar-personal-website"
+output_dir: docs
+navbar:
+  title: "Husna Anwar"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Research"
+      href: research.html
+    - text: "Industry"
+      href: industry.html
+    - text: "Other"
+      href: journalism.html
+  right: 
+    - icon: fa-envelope fa-lg
+      href: mailto:<anwar.husna@gmail.com>
+    - icon: fa-github fa-lg
+      href: http://github.com/husnaanwar/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/husnaanwar/
+output:
+  html_document:
+    theme: paper
