@@ -13,7 +13,7 @@
 
 <title>index.knit</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
@@ -32,8 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -143,11 +143,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +180,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +189,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -292,33 +289,40 @@ $(document).ready(function () {
 </div>
 
 
-<p><img src="files/Husna.jpeg" style="width:35%;border: 3px solid #102e61; margin:50px 50px" align = 'right'></p>
-<p><img src="files/University_of_Toronto-Logo.wine.png" style=" width:25%" ></p>
-<div
-id="the-edward-s.-rogers-sr.-department-of-electrical-computer-engineering"
-class="section level4">
-<h4>The Edward S. Rogers Sr. Department of Electrical &amp; Computer
-Engineering</h4>
-<p>PhD Candidate, Graduate Researcher at <a
-href="https://light.utoronto.ca/">Sargent Lab</a>, <a
+<p><img src="files/Husna.jpeg" style="width:35%;border: 3px solid #102e61; margin:50px 50px" align="right"/></p>
+<div id="section" class="section level4">
+<h4></h4>
+<p>Husna is an expert on emerging and existing renewable energy
+technologies with a focus on photovoltaics. She is an advocate for
+electrification and decarbonization via a diverse set of energy
+infrastructure solutions working in tandem. She completed her doctorate
+with the <a href="https://light.utoronto.ca/">Sargent Lab</a> at the
+University of Toronto in 2024 where she explored new materials for
+optoelectronic applications such as LEDs and solar cells, primarily
+using metal-halide perovskites. Husna led the optoelectronics thrust
+within the <a
 href="https://www.utoronto.ca/news/u-t-led-partnership-accelerate-search-new-sustainable-energy-smartphone-materials">Alliance
-for AI-Assisted Accelerated Materials Discovery</a></p>
-<p>Husna is a doctoral candidate at the Department of Electrical and
-Computer Engineering, University of Toronto. Husna explores new
-materials for optoelectronic applications such as LEDs and solar cells,
-primarily focusing on metal-halide perovskites. Husna uses a combination
+for AI-Assisted Accelerated Materials Discovery</a>, using a combination
 of automation and computation to accelerate traditional experimental
-fabrication and characterization methods. In 2015, Husna graduated magna
-cum laude with High Honors in Physics from Mount Holyoke College,
-Massachusetts. Husna completed her undergraduate honors thesis on device
-architectures for organic photovoltaics. Husna then began working as a
-Project Engineer/Manager at <a
+fabrication and characterization methods. During this time, Husna
+collaborated and advised on material solutions ranging from colloidal
+quantum dots, piezoelectrics, electro-optical modulators and catalysts
+for CO<sub>2</sub> conversion into value products. Prior to this, Husna
+was a design engineer and project manager at <a
 href="https://www.brightpower.com/">Bright Power, Inc.</a>, an energy
 efficiency startup. Husna spent four years designing and overseeing the
-construction of solar, storage and cogeneration projects for low income
-housing in New York City before joining the Sargent Lab as a graduate
-researcher in 2019 where she also spearheads a Equity, Diversity and
-Inclusion initiative for research spaces.</p>
+construction of solar, storage and cogeneration distributed energy
+projects for low income housing in New York City. Husna graduated
+<i>magna cum laude</i> with high honors in Physics from Mount Holyoke
+College in Massachusetts where she completed her undergraduate honors
+thesis on planar device architectures for organic photovoltaics. Husna
+is also a strong proponent of embedding inclusivity and equity into
+professional and academic spaces, founding both the Food Recovery
+Network MHC chapter as an undergraduate, and the Sargent DEI initiative
+for research spaces as a graduate student.</p>
+<p><img src="files/University_of_Toronto-Logo.wine.png" style=" width:25%"/>
+<img src="files/Fix2_logo_dark_300.png" style=" width:25%"/>
+<img src="files/mount-holyoke-college-2-logo.png" style=" width:25%"/></p>
 </div>
 
 

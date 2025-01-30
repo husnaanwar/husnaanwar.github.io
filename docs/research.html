@@ -298,6 +298,7 @@ class="section level2">
 <h2>High-Throughput Materials Discovery for Metal Halide Perovskite
 Light Emitters</h2>
 <p><img src="files/qdots.png" style="width:50%;border: 3px solid #102e61; margin:50px 50px" align = 'right'></p>
+<br>
 <p>In the past decade alone, thin-film metal-halide perovskite (MHP)
 solar cell power conversion efficiency (PCE) has increased from 3.8% to
 25.5%. MHPs have small exciton binding energy, balanced electron, and
@@ -330,9 +331,12 @@ discovered using this method and published for further exploration by the perovs
 <div
 id="machine-learning-assisted-hole-transport-material-discovery-for-quantum-dot-leds"
 class="section level2">
+<br>
 <h2>Machine-Learning Assisted Hole Transport Material Discovery for
 Quantum Dot LEDs</h2>
 <p><img src="files/tertiary.png" style="width:45%;border: 3px solid #102e61; margin:50px 50px" align = 'left'></p>
+<br>
+<br>
 <p>Thin-film LEDs, such as quantum dot LEDs (QD LEDs), require
 additional transport layers to aid in charge injection and extraction
 from the electrodes into the active material. The typical device
@@ -346,34 +350,89 @@ with being sensitive to moisture, temperature, and other atmospheric
 onditions. Inorganic alternatives to HTL materials are needed to produce
 the next generation of stable and bright QD LEDs with high emission
 efficiency.</p>
-<p><img src="files/dist_of_compounds.png" style="width:35%;border: 3px solid #102e61; margin:50px 50px" align = 'right'></p>
-<p>This project uses an existing database of inorganic materials,
-synthesized, and characterized by the National Renewable Energy
-Laboratory (NREL) along with supplementary data from other databases to
-train ML models on characteristics integral to HTLs, such as
-conductivity, hole mobility and bandgaps, to predict high-performing,
-stable candidates.</p>
+<p><img src="files/dist_of_compounds.png" style="width:45%;border: 3px solid #102e61; margin:50px 50px" align = 'right'></p>
+<p>This first project leverages an existing dataset produced by the National Renewable Energy
+Laboratory (NREL). The High Throughput Experimental Materials Database (HTEM DB)
+database contains spatially resolved characterization data for inorganic thin films deposited using
+combinatorial physical vapor deposition (PVD) methods. The database has been used for high
+throughput exploration of electronic and energy materials, but this is the first report to use it for
+mobility studies. Using this database, I train three ML models to predict key optical and
+electronic properties for inorganic metal compounds such as conductivity, mobility, and
+bandgap. The model predicts absorption spectra for the first time using just the stoichiometric
+representation of a proposed compound. This negates the need for multiple device fabrication
+and characterization, accelerating the optimization of a ternary metal oxide by 5x-10x. The
+model also performs 1000x faster than using DFT to predict absorption profiles, and the
+bandgaps derived from our profiles have a 3x lower MAE. To validate the methodology, I
+estimate a proxy for mobility using conductivity and absorption. Finally, I leverage the model to optimize the conductivity of sputtered Cu-
+doped NiOx and fabricate samples experimentally for confirmation. I observe a 2x improvement in conductivity over pristine sputtered NiOx. </p>
 <div style="page-break-after: always;"></div>
 <p><span class="math display">\[\\[1in]\]</span> <span
 class="math display">\[\\[1in]\]</span></p>
 </div>
 <div id="high-throughput-discovery-for-stable-blue-organic-emitters"
 class="section level2">
-<h2>High-Throughput Discovery for Stable Blue Organic Emitters</h2>
+
+<h2> Investigating the Origin of Phase Transition During the Crystallization of Rb-substituted
+Wide-Bandgap Perovskite Thin-Films </h2>
 <p><img src="files/htp.png" style="width:35%;border: 3px solid #102e61; margin:50px 50px" align = 'left'></p>
-<p>OLEDs were first developed in the late 1980s by Tang et al and
-enjoyed a period of popularity in the decades following. In recent
-years, OLEDs have since taken a back seat to emerging technologies such
-as PLEDs and QDLEDs but they remain the dominant display technology for
-hand-held and wearable electronics. The field of OLEDs still requires
-research into more affordable fabrication and stable blue light
-emitters. This project uses a high-throughput screening approach to
-synthesize and characterize new organic light emitters that emit stable,
-blue light.</p>
+<br>
+<br>
+<p>CsPbX<sub>3</sub> was the first perovskite ever studied for optoelectronics in 1958 when 
+researchers discovered that Cl- or Br-based CsPbX<sub>3</sub> resulted
+in colored crystals that demonstrated a photoconductive response. However, it took over half a
+century for these inorganic perovskites to result in functioning PV devices in 2015. This
+optoelectronic property has since been exploited for a range of electronic devices but these 
+perovskites still suffer from instability. Phase segregation occurs as ions migrate in the
+presence of vacancies, degrading the PCE and stability of the perovskite layer. Passivation with
+alkali metal cations has been employed with great success. Rb+ incorporated organic-inorganic
+perovskites have been observed to improve crystallization kinetics and hence the overall thin-film
+quality. However, little is understood of the mechanism through which Rb+ influences the
+crystallization of the thin film. </p>
+<p>The use of synchrotron-based grazing incident wide angle X-ray
+scattering (GIWAXS) has thus become an indispensable tool for investigating and comprehending
+the structure of perovskite thin films. The rapid and extensive adoption of GIWAXS
+experiments—both in-situ and ex-situ—has generated large amounts of data that are typically
+thoroughly analyzed by hand. </p>
+<p>In this work, I use a custom-built in-situ spin-coating and annealing setup that integrates with
+Brockhouse XRD and Scattering Sector Low Energy Wiggler (BXDS-WLE) beamline of the
+Canadian Light Source. I study the wide-bandgap perovskite composition
+Cs<sub>1−x</sub>Rb<sub>x</sub>PbI<sub>1.75</sub>Br<sub>1.25</sub> (x= 0.05-0.20) and 
+gather time-dependent dataset of images to track
+crystallization over the spin-coating and annealing process. We conclude that a threshold amount
+of Rb negates the degradation brought about by Br incorporation. We observe that x=0.15 suggests
+the creation of a stable active perovskite until prolonged annealing results in degradation to the
+delta phase. Lower or larger amounts of Rb do not translate into improved stability or device
+performance. The dataset comprised of ~10,000 GIWAXS 2D diffraction images are integrated
+into 1D linecuts, normalized, and were subsequently used to extrapolate how varying the A-site cation
+will affect a given perovskite composition without having to conduct lengthy in-situ experiments,
+reducing the dependance on synchrotron beamtime. </p>
 </div>
 
+<div id="publications" class="section level3">
+<h3>Publications:</h3>
+<ul>
+<li><a
+href="https://advanced.onlinelibrary.wiley.com/doi/full/10.1002/adma.202301842">Sequential Co-Passivation in InAs Colloidal Quantum Dot Solids 
+Enables Efficient Near-Infrared Photodetectors</a></li>
+<li><a
+href="https://pubs.acs.org/doi/10.1021/acscentsci.2c00041">High-Throughput Evaluation of Emission and Structure in Reduced-Dimensional Perovskites</a></li>
+<li><a
+href="https://pubs.acs.org/doi/10.1021/jacs.2c09705">Dipole Engineering through the Orientation of Interface Molecules for Efficient InP Quantum Dot Light-Emitting Diodes</a></li>
+<li><a
+href="https://onlinelibrary.wiley.com/doi/full/10.1002/marc.201400714">Triplet State Formation in Photovoltaic Blends of DPP-Type Copolymers and PC<sub>71</sub>BM</a></li>
+</ul>
+</div>
 
-
+<div id="publications" class="section level3">
+<h3>Theses:</h3>
+<ul>
+<li>Doctoral<p><a
+href="https://utoronto.scholaris.ca/items/cf1e334e-95bb-4744-ad9a-6354487a3d19">Advancing Sustainable Energy Materials: Accelerated Discovery Techniques</a></p></li>
+<li> Undergraduate Honors
+<p><a
+href="http://hdl.handle.net/10166/3683">New Device Structures for Organic Photovoltaics Using Transfer Printing</a></p>
+</ul>
+</div>
 
 </div>
 
